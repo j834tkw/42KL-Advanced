@@ -60,6 +60,7 @@ public class Simulator {
 			}
 
 			String filename = args[0];
+			weatherTower = new WeatherTower();
 			
 			System.out.println("PROGRESS: Parsing simulation iterations...");
 			getSimulationIterations(filename);
@@ -68,11 +69,9 @@ public class Simulator {
 			getAircrafts(filename);
 			System.out.println("PROGRESS: Finished parsing aircrafts");
 
-			weatherTower = new WeatherTower();
 			
 			System.out.println("PROGRESS: Running Scenario...");
 			while (totalIterations-- > 0) {
-				Log.write("eddede");
 				weatherTower.changeWeather();
 			}
 			System.out.println("PROGRESS: Scenario run complete");
