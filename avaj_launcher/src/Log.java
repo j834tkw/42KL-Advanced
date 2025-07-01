@@ -6,7 +6,7 @@ import java.io.IOException;
 import java.io.PrintWriter;
 
 public class Log {
-    private static final Log instance = new Log();
+    private static Log instance = new Log();
     private static final String FILE_NAME = "./simulation.txt";
     private PrintWriter writer;
 
@@ -19,6 +19,8 @@ public class Log {
     }
 
     public static Log getInstance() {
+		if (instance == null)
+			instance = new Log();
         return instance;
     }
 

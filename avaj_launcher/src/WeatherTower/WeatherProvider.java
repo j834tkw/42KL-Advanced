@@ -3,11 +3,13 @@ package avaj_launcher.src.WeatherTower;
 import avaj_launcher.src.Misc.Coordinates;
 
 public class WeatherProvider {
-	private static final WeatherProvider instance = new WeatherProvider();
+	private static WeatherProvider instance = new WeatherProvider();
 
 	private WeatherProvider() {}
 
 	public static WeatherProvider getInstance() {
+		if (instance == null)
+			instance = new WeatherProvider();
         return instance;
     }
 
