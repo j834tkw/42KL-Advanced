@@ -3,9 +3,14 @@ package avaj_launcher.src.Aircraft;
 import avaj_launcher.src.Misc.Coordinates;
 
 public class AircraftFactory {
+	private static final AircraftFactory instance = new AircraftFactory();
 	private static long idCounter = 0;
 
-	public static Flyable newAircraft(String p_type, String p_name, Coordinates p_coordinates) {
+	public static AircraftFactory getInstance() {
+        return instance;
+    }
+
+	public Flyable newAircraft(String p_type, String p_name, Coordinates p_coordinates) {
 		long id = ++idCounter;
 		
 		switch (p_type) {

@@ -12,3 +12,4 @@ run:
 clean:
 	find . -name "*.class" -type f -delete
 	rm -f sources.txt
+	find ./avaj_launcher -type d -empty -delete 2>/dev/null || true

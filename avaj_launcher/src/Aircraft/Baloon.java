@@ -14,8 +14,11 @@ public class Baloon extends Aircraft implements Flyable {
 	}
 
 	public void registerTower(WeatherTower p_tower) {
+		System.out.println("dededed");
 		this.weatherTower = p_tower;
+		System.out.println("dededed");
 		this.weatherTower.register(this);
+		System.out.println("dededed");
 	}
 
 	public void updateConditions() {
@@ -45,7 +48,8 @@ public class Baloon extends Aircraft implements Flyable {
 		}
 	}
 
+	@Override
     public String toString() {
-        return "Baloon #" + name + " [id " + id + "]";
+        return "Baloon#" + name + " [id " + id + "]";
     }
 }

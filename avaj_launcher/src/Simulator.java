@@ -48,7 +48,7 @@ public class Simulator {
                 int height = Integer.parseInt(parts[4]);
 				Coordinates coordinates = new Coordinates(longitude, latitude, height);
 
-                AircraftFactory.newAircraft(type, name, coordinates);
+                AircraftFactory.getInstance().newAircraft(type, name, coordinates).registerTower(weatherTower);
             }
         }
     }
@@ -61,14 +61,21 @@ public class Simulator {
 
 			String filename = args[0];
 			
+			System.out.println("PROGRESS: Parsing simulation iterations...");
 			getSimulationIterations(filename);
+			System.out.println("PROGRESS: Finished parsing simulation iterations");
+			System.out.println("PROGRESS: Parsing aircrafts...");
 			getAircrafts(filename);
+			System.out.println("PROGRESS: Finished parsing aircrafts");
 
 			weatherTower = new WeatherTower();
 			
+			System.out.println("PROGRESS: Running Scenario...");
 			while (totalIterations-- > 0) {
+				Log.write("eddede");
 				weatherTower.changeWeather();
 			}
+			System.out.println("PROGRESS: Scenario run complete");
 
 		} catch(Exception e) {
 			System.err.println(e.getMessage());

@@ -10,10 +10,12 @@ public class Tower {
 	private List<Flyable> observers = new ArrayList<Flyable>();
 
 	public void register(Flyable p_flyable) {
+		System.out.println("asasasass");
 		if (!observers.contains(p_flyable)) {
 			observers.add(p_flyable);
 			Log.write("A new aircraft has been registered. Welcome to the Tower in Between, " + p_flyable.toString());
 		}
+		System.out.println("asasasass");
 	}
 
 	public void unregister(Flyable p_flyable) {

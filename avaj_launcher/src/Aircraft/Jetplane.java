@@ -46,6 +46,6 @@ public class Jetplane extends Aircraft implements Flyable {
 	}
 
 	public String toString() {
-        return "Jetplane #" + name + " [id " + id + "]";
+        return "Jetplane#" + name + " [id " + id + "]";
     }
 }
