@@ -65,12 +65,13 @@ public class Simulator {
 			getAircrafts(filename);
 
 			weatherTower = new WeatherTower();
+			
 			while (totalIterations-- > 0) {
 				weatherTower.changeWeather();
 			}
 
 		} catch(Exception e) {
-
+			System.err.println(e.getMessage());
 		}
 	}
 }

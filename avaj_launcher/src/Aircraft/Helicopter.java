@@ -2,6 +2,7 @@ package avaj_launcher.src.Aircraft;
 
 import java.util.HashMap;
 
+import avaj_launcher.src.Log;
 import avaj_launcher.src.Misc.Coordinates;
 import avaj_launcher.src.WeatherTower.WeatherTower;
 
@@ -37,8 +38,14 @@ public class Helicopter extends Aircraft implements Flyable {
 				this.coordinates = new Coordinates(this.coordinates.getLongitude(), this.coordinates.getLatitude(), this.coordinates.getHeight() - 12);
 		}
 
+		Log.write(this.toString() + ": " + msg.get(weather));
+
 		if (this.coordinates.getHeight() == 0) {
 			this.weatherTower.unregister(this);
 		}
 	}
+
+	public String toString() {
+        return "Helicopter #" + name + " [id " + id + "]";
+    }
 }

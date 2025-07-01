@@ -3,6 +3,7 @@ package avaj_launcher.src.WeatherTower;
 import java.util.ArrayList;
 import java.util.List;
 
+import avaj_launcher.src.Log;
 import avaj_launcher.src.Aircraft.Flyable;
 
 public class Tower {
@@ -11,11 +12,13 @@ public class Tower {
 	public void register(Flyable p_flyable) {
 		if (!observers.contains(p_flyable)) {
 			observers.add(p_flyable);
+			Log.write("A new aircraft has been registered. Welcome to the Tower in Between, " + p_flyable.toString());
 		}
 	}
 
 	public void unregister(Flyable p_flyable) {
 		observers.remove(p_flyable);
+		Log.write(p_flyable.toString() + "has landed. The Tower in Between will no longer tracking the aircraft");
 	}
 
 	protected void conditionChanged() {
