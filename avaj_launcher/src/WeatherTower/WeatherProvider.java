@@ -1,6 +1,6 @@
 package avaj_launcher.src.WeatherTower;
 
-import avaj_launcher.src.Misc.Coordinates;
+import avaj_launcher.src.Coordinates;
 
 public class WeatherProvider {
 	private static WeatherProvider instance = new WeatherProvider();

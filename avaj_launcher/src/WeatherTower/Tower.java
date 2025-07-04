@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import avaj_launcher.src.Log;
-import avaj_launcher.src.Aircraft.Flyable;
+import avaj_launcher.src.AircraftSrc.Flyable;
 
 public class Tower {
 	private List<Flyable> observers = new ArrayList<Flyable>();

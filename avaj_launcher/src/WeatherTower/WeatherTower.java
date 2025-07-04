@@ -1,6 +1,6 @@
 package avaj_launcher.src.WeatherTower;
 
-import avaj_launcher.src.Misc.Coordinates;
+import avaj_launcher.src.Coordinates;
 
 public class WeatherTower extends Tower {
 	public String getWeather(Coordinates p_coordinates) {

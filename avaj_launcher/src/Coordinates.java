@@ -1,4 +1,4 @@
-package avaj_launcher.src.Misc;
+package avaj_launcher.src;
 
 public class Coordinates {
 	private int longitude;
@@ -7,7 +7,7 @@ public class Coordinates {
 
 	private int height;
 
-	public Coordinates(int p_longitude, int p_latitude, int p_height) {
+	Coordinates(int p_longitude, int p_latitude, int p_height) {
 		this.longitude = p_longitude;
 		this.latitute = p_latitude;
 		this.height = p_height;

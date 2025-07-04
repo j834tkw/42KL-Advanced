@@ -1,23 +1,15 @@
-package avaj_launcher.src.Aircraft;
+package avaj_launcher.src;
 
 import java.util.HashMap;
 
-import avaj_launcher.src.Log;
-import avaj_launcher.src.Misc.Coordinates;
-import avaj_launcher.src.WeatherTower.WeatherTower;
+import avaj_launcher.src.AircraftSrc.Aircraft;
 
-public class Jetplane extends Aircraft implements Flyable {
-	private WeatherTower weatherTower;
-
+public class Jetplane extends Aircraft{
 	public Jetplane (long p_id, String p_name, Coordinates p_coordinate) {
 		super(p_id, p_name, p_coordinate);
 	}
 
-	public void registerTower(WeatherTower p_tower) {
-		this.weatherTower = p_tower;
-		this.weatherTower.register(this);
-	}
-
+	@Override
 	public void updateConditions() {
 		HashMap<String, String> msg = new HashMap<>();
 		msg.put("SUN", "The INTENSE BLAZING SUNSHINE is upon my plane");

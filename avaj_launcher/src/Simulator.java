@@ -5,12 +5,11 @@ import java.io.FileReader;
 import java.io.IOException;
 
 import avaj_launcher.src.WeatherTower.WeatherTower;
-import avaj_launcher.src.Aircraft.AircraftFactory;
+import avaj_launcher.src.AircraftSrc.AircraftFactory;
 import avaj_launcher.src.Exceptions.InvalidAircraftException;
 import avaj_launcher.src.Exceptions.InvalidMainArgumentsException;
 import avaj_launcher.src.Exceptions.InvalidScenarioException;
 import avaj_launcher.src.Exceptions.InvalidSimulationIterationException;
-import avaj_launcher.src.Misc.Coordinates;
 
 public class Simulator {
 	private static int totalIterations;
@@ -27,7 +26,7 @@ public class Simulator {
             totalIterations = Integer.parseInt(firstLine.trim());
 
 			if (totalIterations < 0) {
-				throw new InvalidSimulationIterationException("ERROR: The number of simulation iterations cannot be less than 0");
+				throw new InvalidSimulationIterationException();
 			}
         }
     }
@@ -68,7 +67,7 @@ public class Simulator {
 	public static void main(String[] args) {
 		try {
 			if (args.length != 1) {
-				throw new InvalidMainArgumentsException("ERROR: Provide a file path as a single argument");
+				throw new InvalidMainArgumentsException();
 			}
 
 			String filename = args[0];

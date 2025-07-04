@@ -1,7 +1,10 @@
-package avaj_launcher.src.Aircraft;
+package avaj_launcher.src.AircraftSrc;
 
+import avaj_launcher.src.Baloon;
+import avaj_launcher.src.Coordinates;
+import avaj_launcher.src.Helicopter;
+import avaj_launcher.src.Jetplane;
 import avaj_launcher.src.Exceptions.InvalidAircraftException;
-import avaj_launcher.src.Misc.Coordinates;
 
 public class AircraftFactory {
 	private static AircraftFactory instance = new AircraftFactory();
@@ -26,7 +29,7 @@ public class AircraftFactory {
             case "Helicopter":
                 return new Helicopter(id, p_name, p_coordinates);
             default:
-                throw new InvalidAircraftException("Unknown aircraft type: " + p_type);
+                throw new InvalidAircraftException("ERROR: Unknown aircraft type: " + p_type);
         }
 	}
 }
