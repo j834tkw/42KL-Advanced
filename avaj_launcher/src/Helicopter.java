@@ -12,10 +12,10 @@ public class Helicopter extends Aircraft{
 	@Override
 	public void updateConditions() {
 		HashMap<String, String> msg = new HashMap<>();
-		msg.put("SUN", "This CHOPPER will PIERCE the LIGHT of the SUN");
-		msg.put("RAIN", "This CHOPPER will REND the TEARS of the HEAVENS");
-		msg.put("FOG", "This CHOPPER will SLICE the DOMAIN of the UNKNOWN");
-		msg.put("SNOW", "This CHOPPER will RIP the ESSENCE of the WINTER");
+		msg.put("SUN", "This chopper will PIERCE the LIGHT of the SUN");
+		msg.put("RAIN", "This chopper will REND the TEARS of the HEAVENS");
+		msg.put("FOG", "This chopper will SLICE the DOMAIN of the UNKNOWN");
+		msg.put("SNOW", "This chopper will RIP the ESSENCE of the WINTER");
 
 		String weather = this.weatherTower.getWeather(this.coordinates);
 
