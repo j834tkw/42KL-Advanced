@@ -9,12 +9,12 @@ section .text
 ; Returns pointer to duplicated string or NULL on error
 ft_strdup:
     push    rdi                 ; Save original string pointer
-    call    ft_strlen wrt ..plt ; Get length of string (in rax)
-    inc     rax                 ; Add 1 for null terminator
+    call    ft_strlen wrt ..plt ; Get length of string in rax
+    inc     rax                 ; Add 1 for null terminator (rax will have ft_strlen's returned string length)
     mov     rdi, rax            ; Move size to rdi for malloc
     call    malloc wrt ..plt    ; Allocate memory
 
-    test    rax, rax            ; Check if malloc returned NULL
+    test    rax, rax            ; Check if malloc returned NULL (rax will have malloc's returned pointer)
     jz      .error              ; If NULL, return NULL
 
     pop     rsi                 ; Restore original string pointer to rsi
