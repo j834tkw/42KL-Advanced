@@ -9,13 +9,13 @@ ft_strcmp:
     xor     rcx, rcx            ; Initialize index to 0
 
 .loop:
-    movzx   rax, BYTE [rdi + rcx] ; Load byte from s1 (zero-extend)
-    movzx   rdx, BYTE [rsi + rcx] ; Load byte from s2 (zero-extend)
+    movzx   rax, BYTE [rdi + rcx] ; Load byte from s1 (movzx clears upper bits and treats bytes as unsigned (strcmp behavior))
+    movzx   rdx, BYTE [rsi + rcx] ; Load byte from s2
 
     cmp     rax, rdx            ; Compare bytes
     jne     .diff               ; If different, calculate difference
 
-    test    al, al              ; Check if we reached null terminator
+    test    al, al              ; Test one byte ('\0'); chars are equal already, so checking al is enough, instead of rax or rdx
     je      .equal              ; If yes, strings are equal
 
     inc     rcx                 ; Increment index
