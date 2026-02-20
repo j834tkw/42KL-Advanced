@@ -17,8 +17,9 @@ ft_read:
 
 .error:
     neg     rax                 ; Make error code positive
-    mov     r8, rax             ; Save error code in r8
+    push    rax                 ; Save error code and align stack for call
     call    __errno_location wrt ..plt ; Get address of errno (using PLT)
-    mov     [rax], r8           ; Set errno
+    pop     rdx                 ; Restore saved error code
+    mov     dword [rax], edx    ; errno is int (32-bit): write 4 bytes from edx, not 8 from rdx
     mov     rax, -1             ; Return -1
     ret
