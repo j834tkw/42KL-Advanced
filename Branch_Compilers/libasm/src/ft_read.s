@@ -18,8 +18,8 @@ ft_read:
 .error:
     neg     rax                 ; Make error code positive
     push    rax                 ; Save error code and align stack for call
-    call    __errno_location wrt ..plt ; Get address of errno (using PLT)
-    pop     rdx                 ; Restore saved error code
-    mov     dword [rax], edx    ; errno is int (32-bit): write 4 bytes from edx, not 8 from rdx
+    call    __errno_location wrt ..plt ; Get address of errno using PLT, rax is now a (temporary) pointer to errno
+    pop     rdx                 ; Restore saved error code into rdx
+    mov     dword [rax], edx    ; errno is int (32-bit), so write 4 bytes from edx, not 8 from rdx. Then write the error code into errno
     mov     rax, -1             ; Return -1
     ret
